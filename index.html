@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Template Scoring Dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">TS</div>
+      <div>
+        <div class="title">Template Scoring Dashboard</div>
+        <div class="subtitle">Scores are collected via GitHub comments · Priority rule A</div>
+      </div>
+    </div>
+    <button id="btnRefresh" class="btn secondary">Refresh</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>How to Score</h2>
+      <p class="muted">
+        Core question: <b>Do I want to create this effect too?</b><br/>
+        To submit a score, open the GitHub issue and comment: <code>Score: X</code> (0–5).<br/>
+        Your latest score will be used.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2>Ideas</h2>
+        <div class="row right">
+          <select id="filterSelect" class="select">
+            <option value="all">All</option>
+            <option value="needs_scoring">Needs scoring</option>
+            <option value="scored">Scored</option>
+            <option value="P0">P0 (avg ≥ 4.0)</option>
+            <option value="P1">P1 (3.5–3.9)</option>
+            <option value="P2">P2 (3.0–3.4)</option>
+            <option value="P3">P3 (avg &lt; 3.0)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="stats" class="summary"></div>
+      <div id="list" class="list"></div>
+      <div id="status" class="muted"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
